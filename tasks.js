@@ -34,5 +34,16 @@ function removeTask(index) {
     console.log(`Tarea "${removed}" eliminada.`);
 }
 
+// Función para actualizar una tarea por su índice
+function updateTask(index, newTask) {
+    if (index < 0 || index >= tasks.length) {
+        console.log("Índice inválido. No se puede actualizar la tarea.");
+        return;
+    }
+    const oldTask = tasks[index];
+    tasks[index] = newTask;
+    console.log(`Tarea actualizada: "${oldTask}" → "${newTask}"`);
+}
+
 // Exportaciones de funciones
-module.exports = { addTask, listTasks, removeTask };
+module.exports = { addTask, listTasks, removeTask, updateTask };
